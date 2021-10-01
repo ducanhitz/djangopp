@@ -131,3 +131,8 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/login/'
+
+try: 
+    from ffproject.local_setting import *
+except ImportError:
+    pass
