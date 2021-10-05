@@ -8,6 +8,13 @@
     <p>Email: {{ user.email }}</p>
     <p>Last login: {{ user.last_login }}</p>
     <p>Ngày đăng ký: {{user.date_joined}}</p>
+
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <p>
+            <button class="btn btn-primary" type="submit">Update</button>
+        </p>
+    </form>
     <p><a href="{% url 'logout' %}" class="btn btn-danger">Thoát</a></p>
 </div>
 {% endblock %}
