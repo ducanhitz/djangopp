@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Show Post{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts_list %}
+            <div class="card card-signin my-5">
+                <div style="display: flex">
+                    <img class="card-img-top" src="{{ post.pic.url }}" style="width: 200px; height: auto;">
+                    <div class="card-body">
+                        <b>{{ post.user_name}}</b>
+                        <br><small class="text-muted">Posted on {{ post.date_posted }}</small>
+                        <br><br>
+                        <p class="card-text text-dark">{{ post.description }}</p>
+                        {% if post.tags %}
+                        <p class="text-danger ml-3"><b>Tags: <i>{{ post.tags }}</i></b></p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
