@@ -3,6 +3,7 @@
 *.pot
 *.pyc
 __pycache__
+media/
 
 # User-specific stuff
 .idea/**/workspace.xml
@@ -103,7 +104,7 @@ modules.xml
 .idea/codestream.xml
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
