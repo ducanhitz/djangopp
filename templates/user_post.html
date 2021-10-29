@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}My post{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in user_posts_list %}
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <b>{{ post.user_name }}</b>
+                    <br><small class="text-muted">Posted on {{ post.date_posted }}</small>
+                    <br>
+                    <p class="card-text text-dark">{{ post.description }}</p>
+                </div>
+                <img class="card-img-top" src="{{ post.pic.url }}" alt="">
+                {% if post.tags %}
+                <br>
+                <p class="text-danger ml-3"><b>Tags: <i>{{ post.tags }}</i></b></p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
